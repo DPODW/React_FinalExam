@@ -5,25 +5,29 @@ import Update from './mainFunction/Update'
 import Create from './mainFunction/Create'
 import Nav from './mainFunction/Nav'
 import Article from './mainFunction/Article'
+import CurrentTime from './addFunction/CurrentTime';
+import CurrentWeather from './addFunction/CurrentWeather';
+import CurrentNews from './addFunction/CurrentNews';
+import KakaoMap from './addFunction/kakaoMap';
+
 import { useState } from 'react';
 
 
 function App() {
-
 
   const [mode, setMode] = useState('WELCOME');
   const [id, setId] = useState(null);
   const [nextId, setNextId] = useState(4);
 
   const [topics,setTopics] = useState([
-    {id:1, title:'더미 데이터', body:'본문'}
+    {id:1, title:'안녕하세요', body:'1912031 문태진 입니다.'}
   ]);
 
   let content = null;
   let contextControl = null;
 
   if(mode==="WELCOME"){
-    content = <Article title="익명 게시판 입니다." body="익명에 기대어 남을 비난하지 맙시다."></Article>
+    content = <Article title="익명 게시판 입니다."></Article>
     contextControl = <>
       <a class="btn" href="/create" onClick={event => {
         event.preventDefault();
@@ -97,47 +101,60 @@ function App() {
 
   return (
     <>
-      <Header title="학교 게시판" onChangeMode={() => {
+      <Header  onChangeMode={() => {
         setMode('WELCOME');
-      }}></Header>
+      }}>
+      </Header>
+  
+      <div className="background">
 
-      <div class="background">
-        <div class="titlebar">글 목록</div>
-        <div class="content">
-
+        <div className="titlebar">글 목록</div>
+        <div className="content">
           <Nav topics={topics} onChangeMode={(_id) => {
             setMode('READ');
             setId(_id);
           }}></Nav>
         </div>
-
-        <div class="titlebar">글 내용</div>
-        <div class="content">
+  
+        <div className="titlebar">글 내용</div>
+        <div className="content">
           {content}
-            <div class="btncover">
-              {contextControl}
-            </div>
+          <div className="btncover">
+            {contextControl}
+          </div>
         </div>
-
-        <hr/>
+  
+        <hr />
+  
         <aside>
-    <h2>사이드바</h2> api 하나 하면 될듯
-          <ul>
-            <li>메뉴 항목 1</li>
-            <li>메뉴 항목 2</li>
-            <li>메뉴 항목 3</li>
-          </ul>
+          <h3>현재 울산 날씨 입니다.</h3>
+          <CurrentWeather />
         </aside>
-
+  
+        <hr />
+  
         <footer className="footer">
           <div className="container">
             <div className="footer-content">
+              <ul>
+                <li><a href="https://www.uc.ac.kr/www/?ref=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8%3D" target='_blank'>울산과학대학교 (클릭시 이동)</a></li>
+                <li><a href="https://www.uc.ac.kr/computer/" target='_blank'>IT응용기술학부 (클릭시 이동)</a></li>
+              </ul>
+              <CurrentTime />
               <p>&copy; 1912031 문태진 캡스톤 기말 과제</p>
             </div>
           </div>
         </footer>
       </div>
-      
+  
+      <div className="News-section">
+        <CurrentNews/>
+      </div>
+
+      <div className="aa-section">
+        <h2>School Location</h2>
+      <KakaoMap/>
+      </div>
     </>
   );
 }

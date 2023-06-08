@@ -4,7 +4,7 @@ export default Article;
 
 function Article(props) {
     return <article>
-      <h2>{props.title}</h2>
-      {props.body}
+      <h3>{props.title}</h3>
+    <a> {props.body}</a>
     </article>
   }

@@ -1,0 +1,21 @@
+/* 날씨 CSS */
+.current-weather {
+
+    display: flex;
+    align-items: center;
+    color: black;
+    margin-left: 10px;
+  }
+  
+  .weather-icon {
+    margin-right: 5px;
+  }
+  
+  .weather-info {
+    font-weight: bold;
+  }
+  
+  .weather-details {
+    font-size: 14px;
+    margin-top: 5px;
+  }

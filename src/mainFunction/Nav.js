@@ -17,6 +17,7 @@ function Nav(props) {
     }
     return <nav>
       <ol>
+        
         {lis}
       </ol>
     </nav>

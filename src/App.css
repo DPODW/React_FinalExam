@@ -3,15 +3,19 @@ body {
   flex-direction: column;
   align-items: center;
   background-image: url("img/school.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
       
-.background {
-  
-  height: auto;
-  width: 450px;
-  background: linear-gradient(45deg, #f3a4b5, #ffd3b6, #fffec3, #a9f1df, #8aafff, #d58bff);
+.background {  
+  height: 100%;
+  width: 500px;
+  border-radius: 1%;
+  background: linear-gradient(45deg, blue, #1eada1, #44a3da, #693ece, #8aafff, #d58bff);
   background-size: 600% 600%;
-  animation: gradientAnimation 10s ease infinite;
+  animation: gradientAnimation 8s ease infinite;
+ 
 }
 
 @keyframes gradientAnimation {
@@ -73,3 +77,102 @@ p{
   color: blue;
 }
 
+
+hr{
+  height: 2px;
+  border: none;
+  background-color: gray;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+aside h3 {
+  margin-top: 0;
+}
+
+aside .current-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px; /* 간격을 조정할 값 설정 */
+}
+
+li a {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #000; /* 밑줄 스타일 설정 */
+}
+
+.News-section {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.aa-section {
+  padding-top: 45px;
+  position: fixed;
+  right: 0; /* 변경: left에서 right로 수정 */
+  top: 0;
+  bottom: 0;
+  width: 500px;
+  height: 400px;
+
+}
+
+
+.column {
+  flex: 1;
+  /* 각 컬럼의 스타일 */
+}
+
+h5 {
+  opacity: 0;
+  animation: fadeIn 4s forwards;
+}
+
+h2{
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 4s forwards;
+}
+
+h3{
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
