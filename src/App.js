@@ -9,7 +9,7 @@ import CurrentTime from './addFunction/CurrentTime';
 import CurrentWeather from './addFunction/CurrentWeather';
 import CurrentNews from './addFunction/CurrentNews';
 import KakaoMap from './addFunction/kakaoMap';
-
+import xchoolImage from './img/ucs.png';
 import { useState } from 'react';
 
 
@@ -146,7 +146,8 @@ function App() {
           </div>
         </footer>
       </div>
-  
+      
+
       <div className="News-section">
         <CurrentNews/>
       </div>
@@ -154,9 +155,15 @@ function App() {
       <div className="aa-section">
         <h2>School Location</h2>
       <KakaoMap/>
+      <div className="image-container">
+      <img  src={xchoolImage} alt="School Location" />
+        </div>
       </div>
+      
     </>
+    
   );
+  
 }
 
 export default App;

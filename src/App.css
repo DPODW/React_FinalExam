@@ -176,3 +176,21 @@ h3{
   0% { opacity: 0; }
   100% { opacity: 1; }
 }
+
+.character {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  animation: move 2s infinite linear;
+}
+
+.image-container {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.image-container img {
+  width: 80px;
+  height: auto;
+}
