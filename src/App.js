@@ -8,8 +8,8 @@ import Article from './mainFunction/Article'
 import CurrentTime from './addFunction/CurrentTime';
 import CurrentWeather from './addFunction/CurrentWeather';
 import CurrentNews from './addFunction/CurrentNews';
-import KakaoMap from './addFunction/kakaoMap';
 import xchoolImage from './img/ucs.png';
+import CurrentCovid from './addFunction/CurrentCovid';
 import { useState } from 'react';
 
 
@@ -153,8 +153,7 @@ function App() {
       </div>
 
       <div className="aa-section">
-        <h2>School Location</h2>
-      <KakaoMap/>
+      {<CurrentCovid/>}
       <div className="image-container">
       <img  src={xchoolImage} alt="School Location" />
         </div>
